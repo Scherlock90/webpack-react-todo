@@ -4,6 +4,7 @@ module.exports = {
     mode: 'development',
     devServer: {
         port: 9999,
+        publicPath: '/dist/',
         contentBase: path.resolve(__dirname, 'public'),
         watchContentBase: true,
     },

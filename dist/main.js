@@ -104,7 +104,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nconsole.log(\"first log\");\nconsole.log('next log');\nconsole.log('third log'); // console.log('four')\n\n//# sourceURL=webpack://%5Bname%5D/./lib/main.js?");
+eval("\n\nconsole.log(\"first log\");\n\n//# sourceURL=webpack://%5Bname%5D/./lib/main.js?");
 
 /***/ })
 
