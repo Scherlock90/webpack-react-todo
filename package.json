@@ -2,7 +2,7 @@
   "name": "webpack-react-todo",
   "version": "1.0.0",
   "description": "First application in webpack",
-  "main": "/dist/main.js",
+  "main": "/dist/index.js",
   "repository": "https://github.com/Scherlock90/webpack-react-todo.git",
   "author": "Sebastian Napora <sebastian.napora@intive.com>",
   "license": "MIT",

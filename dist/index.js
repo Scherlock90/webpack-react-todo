@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("main", [], factory);
+		define("index", [], factory);
 	else if(typeof exports === 'object')
-		exports["main"] = factory();
+		exports["index"] = factory();
 	else
-		root["main"] = factory();
+		root["index"] = factory();
 })(window, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./lib/main.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./lib/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -104,19 +104,19 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports[\"default\"] = App;\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { \"default\": obj }; }\n\nfunction App() {\n  return _react2[\"default\"].createElement(\"div\", null, \"My First View in Webpack!\");\n}\n\n//# sourceURL=webpack://%5Bname%5D/./lib/App.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = App;\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction App() {\n  return _react2.default.createElement(\"div\", null, _react2.default.createElement(\"h1\", null, \"My First View in Webpack!\"), _react2.default.createElement(\"p\", null, \"And change\"));\n}\n\n//# sourceURL=webpack://%5Bname%5D/./lib/App.js?");
 
 /***/ }),
 
-/***/ "./lib/main.js":
-/*!*********************!*\
-  !*** ./lib/main.js ***!
-  \*********************/
+/***/ "./lib/index.js":
+/*!**********************!*\
+  !*** ./lib/index.js ***!
+  \**********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\n\nvar _App = __webpack_require__(/*! ./App */ \"./lib/App.js\");\n\nvar _App2 = _interopRequireDefault(_App);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { \"default\": obj }; }\n\n_reactDom2[\"default\"].render(_react2[\"default\"].createElement(_reactRouterDom.BrowserRouter, null, _react2[\"default\"].createElement(_App2[\"default\"], null)), document.getElementById('root'));\n\n//# sourceURL=webpack://%5Bname%5D/./lib/main.js?");
+eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\n\nvar _App = __webpack_require__(/*! ./App */ \"./lib/App.js\");\n\nvar _App2 = _interopRequireDefault(_App);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n_reactDom2.default.render(_react2.default.createElement(_reactRouterDom.BrowserRouter, null, _react2.default.createElement(_App2.default, null)), document.getElementById('root'));\n\n//# sourceURL=webpack://%5Bname%5D/./lib/index.js?");
 
 /***/ }),
 

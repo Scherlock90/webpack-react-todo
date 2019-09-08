@@ -9,7 +9,7 @@ module.exports = {
         watchContentBase: true,
     },
     entry: {
-        main: './lib/main.js',
+        index: './lib/index.js',
     },
     module: {
         rules: [
