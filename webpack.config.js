@@ -1,7 +1,8 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     devServer: {
         port: 9999,
         publicPath: '/dist/',
@@ -11,6 +12,14 @@ module.exports = {
     entry: {
         index: './lib/index.js',
     },
+    plugins: [
+        // new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
+        // new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            title: 'Webpack-react-todo2'
+        })
+    ],
+    // plugins: [    new HtmlWebpackPlugin({      template: path.resolve('./index.html'),    }),  ],
     module: {
         rules: [
             {
@@ -32,7 +41,7 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'build'),
         library: '[name]',
         libraryTarget: 'umd',
         umdNamedDefine: true
