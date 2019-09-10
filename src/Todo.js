@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Todo.css';
+import './style/todo.css';
 
 const badId = pre => {
   return `${pre}_${new Date().getTime()}`;
@@ -48,10 +48,10 @@ const Todo = ({ completed, onCompleted, onDeleted, title, id }) => {
 const List = props => {
   const todos = props.items.map((item, id) => {
     return (
-      <Todo 
-        key={id} 
-        {...props} 
-        {...item} 
+      <Todo
+        key={id}
+        {...props}
+        {...item}
       />
     );
   });
@@ -69,22 +69,22 @@ const Filters = props => {
   return (
     <>
       <label>Show: </label>
-      <button 
-        className={completedClasses} 
+      <button
+        className={completedClasses}
         onClick={props.onFilterCompletedClicked}
       >
         Completed
       </button>
       <span className="pipe"> | </span>
-      <button 
-        className={incompletedClasses} 
+      <button
+        className={incompletedClasses}
         onClick={props.onFilterIncompletedClicked}
       >
         Incomplete
       </button>
       <span className="pipe"> | </span>
-      <button 
-        className={allClasses} 
+      <button
+        className={allClasses}
         onClick={props.onFilterAllClicked}
       >
         All
@@ -118,7 +118,7 @@ const CustomTodo = () => {
 
   const handleAddItem = value => {
     const newTodos = [
-      ...todos, 
+      ...todos,
       { title: value, id: badId('yogabba'), completed: false }
     ];
     setTodos(newTodos);
@@ -164,9 +164,11 @@ const CustomTodo = () => {
     }
     return todosToShow;
   }
+  const title = <h1 className="main-title"> WebPack custom configuration </h1>;
 
   return (
     <>
+      {title}
       <AddForm onAdd={handleAddItem} />
       <List
         items={getTodosToShow()}

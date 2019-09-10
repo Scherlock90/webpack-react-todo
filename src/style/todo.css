@@ -1,6 +1,9 @@
 ::placeholder {
   color: #dedede;
 }
+.main-title{
+  font-size: 180%;
+}
 body {
   background-color: #f6f6f6;
   font-family: helvetica;
