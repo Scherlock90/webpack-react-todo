@@ -29,9 +29,6 @@
     "build-production:webpack": "webpack --config webpack.prod.js"
   },
   "dependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
-    "@babel/preset-react": "^7.0.0",
     "gh-pages": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
