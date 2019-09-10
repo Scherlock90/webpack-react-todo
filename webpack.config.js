@@ -28,7 +28,12 @@ module.exports = {
                     { loader: "style-loader" },
                     { loader: "css-loader" }
                 ]
-            }, { test: /\.js$/, exclude: /node_modules|bower_components/, loaders: ["babel-loader"]}
+            }, 
+            { 
+                test: /\.js$/, 
+                exclude: /node_modules|bower_components/, 
+                loaders: ["babel-loader"] 
+            }
         ]
     },
     plugins: [
