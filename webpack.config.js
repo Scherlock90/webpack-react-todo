@@ -11,7 +11,7 @@ module.exports = {
     devServer: {
         port: 9999,
         publicPath: '/src/',
-        contentBase: './public',
+        contentBase: './server',
         watchContentBase: true,
     },
     entry: {
