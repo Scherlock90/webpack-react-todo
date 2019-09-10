@@ -10,9 +10,10 @@ module.exports = {
     devtool: 'eval',
     devServer: {
         port: 9999,
-        publicPath: '/src/',
-        contentBase: './server',
-        watchContentBase: true,
+        contentBase: './build'
+        // publicPath: '/src/',
+        // contentBase: './server',
+        // watchContentBase: true,
     },
     entry: {
         index: './src/index.js',
