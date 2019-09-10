@@ -4,7 +4,7 @@
   "description": "First application in webpack",
   "main": "/lib/index.js",
   "repository": "https://github.com/Scherlock90/webpack-react-todo.git",
-  "author": "Sebastian Napora <sebastian.napora@intive.com>",
+  "author": "Sebastian Napora",
   "license": "MIT",
   "private": true,
   "homepage": "https://Scherlock90.github.io/webpack-react-todo/",
