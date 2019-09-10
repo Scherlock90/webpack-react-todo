@@ -1,25 +1,22 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const htmlWebpackPlugin = new HtmlWebpackPlugin({
+    template: path.join(__dirname, "/public/index.html"),
+    filename: "./index.html"
+});
 
 module.exports = {
     mode: 'production',
+    devtool: 'source-map',
     devServer: {
         port: 9999,
-        publicPath: '/dist/',
+        publicPath: '/src/',
         contentBase: './public',
         watchContentBase: true,
     },
     entry: {
-        index: './lib/index.js',
+        index: './src/index.js',
     },
-    plugins: [
-        // new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
-        // new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            title: 'Webpack-react-todo2'
-        })
-    ],
-    // plugins: [    new HtmlWebpackPlugin({      template: path.resolve('./index.html'),    }),  ],
     module: {
         rules: [
             {
@@ -38,6 +35,10 @@ module.exports = {
                     }
                 }
             }]
+    },
+    plugins: [htmlWebpackPlugin],
+    resolve: {
+        extensions: [".js", ".jsx"]
     },
     output: {
         filename: '[name].js',

@@ -20,10 +20,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack --mode production",
     "test": "react-scripts test",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d webpack-react-todo/build",
     "start:dev": "webpack-dev-server --watch-content-base",
     "build:webpack": "webpack --config webpack.config.js --module-bind js=babel-loader",
     "build-production:webpack": "webpack --config webpack.prod.js"
