@@ -13,9 +13,6 @@ module.exports = {
         port: 9999,
         contentBase: './build',
         hot: true
-        // publicPath: '/src/',
-        // contentBase: './server',
-        // watchContentBase: true,
     },
     entry: {
         index: './src/index.js',
