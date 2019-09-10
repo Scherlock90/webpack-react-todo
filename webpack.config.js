@@ -6,8 +6,8 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-    mode: 'production',
-    devtool: 'source-map',
+    mode: 'development',
+    devtool: 'eval',
     devServer: {
         port: 9999,
         publicPath: '/src/',

@@ -19,14 +19,11 @@
     "registry": "https://registry.yarnpkg.com"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "webpack --mode production",
-    "test": "react-scripts test",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d /build",
     "start:dev": "webpack-dev-server --watch-content-base",
-    "build:webpack": "webpack --config webpack.config.js --module-bind js=babel-loader",
-    "build-production:webpack": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js --module-bind js=babel-loader",
+    "build:dev": "webpack --config webpack.config.js --module-bind js=babel-loader",
+    "build-production:webpack": "webpack --config webpack.prod.js",
+    "deploy": "gh-pages -d /build"
   },
   "dependencies": {
     "gh-pages": "^2.1.1",
