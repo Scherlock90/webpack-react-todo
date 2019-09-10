@@ -1,159 +1,106 @@
-html {
-    box-sizing: border-box;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  body {
-    --grid-color: #000;
-    --grid-weight: 1px;
-    --grid-spacing: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-position:
-      center center,
-      center center;
-    background-size:
-      var(--grid-spacing) var(--grid-spacing),
-      var(--grid-spacing) var(--grid-spacing);
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        var(--grid-color),
-        var(--grid-color) var(--grid-weight),
-        transparent var(--grid-weight),
-        transparent var(--grid-spacing)
-      ),
-      repeating-linear-gradient(
-        -90deg,
-        var(--grid-color),
-        var(--grid-color) var(--grid-weight),
-        transparent var(--grid-weight),
-        transparent var(--grid-spacing)
-      );
-    color: #000;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 16px;
-  }
-  
-  #root {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1 1 auto;
-    width: 100%;
-  }
-  
-  .contain {
-    width: 100%;
-    max-width: 780px;
-    padding: 0 16px;
-  }
-  
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  li, input {
-    display: block;
-    width: 100%;
-    background: #fff;
-    padding: 16px;
-    margin: 12px 0;
-    border: 1px solid #000;
-    box-shadow: -4px 4px 0px 0px #000;
-    font-family: 'IBM Plex Mono', monospace;
-    cursor: pointer;
-  }
-  
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .remove {
-    position: relative;
-    height: 16px;
-    width: 16px;
-    margin: 0 0 0 16px;
-    padding: 0;
-    flex: 0 0 16px;
-    border: none;
-    appearance: none;
-    background: transparent;
-    cursor: pointer;
-  }
-  
-  .remove::before,
-  .remove::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: calc(50% - 1px);
-    height: 100%;
-    width: 2px;
-    background: #000;
-  }
-  
-  .remove::before {
-    transform: rotate(-45deg);
-  }
-  
-  .remove::after {
-    transform: rotate(45deg);
-  }
-  
-  .remove:focus {
-    outline: none;
-    background: #000;
-    color: #fff;
-  }
-  
-  .remove:focus::before,
-  .remove:focus::after {
-    background: #fff;
-  }
-  
-  li:hover,
-  input:hover {
-    box-shadow: -2px 2px 0px 0px #000;
-  }
-  
-  li:focus,
-  input:focus {
-    color: #00f;
-    outline: none;
-    border: 1px solid #00f;
-    box-shadow: -2px 2px 0px 0px #00f;
-  }
-  
-  li.complete {
-    background:
-      repeating-linear-gradient(
-        0deg,
-        #fff,
-        #fff 1px,
-        transparent 1px,
-        transparent 2px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        #fff,
-        #fff 1px,
-        transparent 1px,
-        transparent 2px
-      )
-      #000;
-  }
-  
-  li.complete div {
-    text-decoration: line-through;
-  }
+::placeholder {
+  color: #dedede;
+}
+body {
+  background-color: #f6f6f6;
+  font-family: helvetica;
+  color: #444;
+}
+.container {
+  background-color: white;
+  width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  box-shadow: 0px 0px 6px 6px #ededed;
+}
+
+form {
+  display: inline-block;
+  width: 100%;
+}
+
+.todo-item,
+.todo-input {
+  font-size: 16px;
+  width: 100%;
+  height: 40px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border-left: 1px solid #ededed;
+  border-right: 1px solid #ededed;
+  border-top: 1px solid #ededed;
+  border-bottom: none;
+}
+
+.todo-input {
+  background-color: #fcfcfc;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  position: relative;
+  padding: 0 10px;
+  line-height: 40px;
+}
+.todo-item:last-child {
+  border-bottom: 1px solid #ededed;
+}
+
+.todo-item input[type='checkbox'] {
+  margin-right: 10px;
+}
+
+.pipe,
+.delete,
+.filter-button {
+  background: transparent;
+  border: none;
+  color: #999;
+}
+.filter-button.active {
+  color: #666;
+  font-weight: bold;
+}
+.delete {
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  color: #ff8888;
+  font-size: 24px;
+  display: none;
+}
+.todo-item:hover .delete {
+  display: inline-block;
+}
+.delete:hover {
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  opacity: .5;
+  cursor: pointer;
+}
+.count {
+  margin-right: 20px;
+}
+footer {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ededed;
+  border-left: 1px solid #ededed;
+  border-right: 1px solid #ededed;
+  padding: 12px 5px;
+  font-size: 13px;
+  text-align: center;
+}
+footer button {
+  font-size: 13px;
+}
+.completed {
+  text-decoration: line-through;
+  color: #d6d6d6;
+}

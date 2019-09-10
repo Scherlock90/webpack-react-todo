@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
@@ -10,7 +11,8 @@ module.exports = {
     devtool: 'eval',
     devServer: {
         port: 9999,
-        contentBase: './build'
+        contentBase: './build',
+        hot: true
         // publicPath: '/src/',
         // contentBase: './server',
         // watchContentBase: true,
@@ -26,18 +28,13 @@ module.exports = {
                     { loader: "style-loader" },
                     { loader: "css-loader" }
                 ]
-            }, {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env']
-                    }
-                }
-            }]
+            }, { test: /\.js$/, exclude: /node_modules|bower_components/, loaders: ["babel-loader"]}
+        ]
     },
-    plugins: [htmlWebpackPlugin],
+    plugins: [
+        htmlWebpackPlugin,
+        new webpack.HotModuleReplacementPlugin()
+    ],
     resolve: {
         extensions: [".js", ".jsx"]
     },
