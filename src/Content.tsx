@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import HomePage from './HomePage';
 import Input from './Input';
 import CustomTodo from './Todo';
 import Nav from './Nav';
@@ -13,7 +14,7 @@ export default function Content() {
                 <Route
                     exact
                     path="/"
-                    component={CustomTodo}
+                    component={HomePage}
                 />
                 <Route
                     path="/todo"

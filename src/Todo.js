@@ -164,11 +164,10 @@ const CustomTodo = () => {
     }
     return todosToShow;
   }
-  const title = <h1 className="main-title"> WebPack custom configuration </h1>;
+  
 
   return (
     <>
-      {title}
       <AddForm onAdd={handleAddItem} />
       <List
         items={getTodosToShow()}
