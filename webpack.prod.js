@@ -48,7 +48,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'build'),
-        publicPath: './',
+        publicPath: '/',
         library: '[name]',
         libraryTarget: 'umd',
         umdNamedDefine: true
