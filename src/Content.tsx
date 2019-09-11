@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import HomePage from './HomePage';
-import Input from './Input';
-import CustomTodo from './Todo';
-import Nav from './Nav';
+import HomePage from './components/HomePage';
+import Input from './components/Input';
+import CustomTodo from './components/Todo/CustomTodo';
+import Nav from './components/Nav';
 
 export default function Content() {
 
