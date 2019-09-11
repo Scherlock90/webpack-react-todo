@@ -11,6 +11,7 @@ module.exports = {
     devtool: 'eval',
     devServer: {
         port: 9999,
+        historyApiFallback: true,
         contentBase: './build',
         hot: true
     },
@@ -41,17 +42,19 @@ module.exports = {
             },
             { 
                 test: /\.tsx?$/, 
-                loader: "ts-loader" 
+                loader: "ts-loader"
             }
         ]
     },
     plugins: [
         htmlWebpackPlugin,
-        new webpack.HotModuleReplacementPlugin()        
+        new webpack.HotModuleReplacementPlugin()  ,
+        new webpack.ProgressPlugin()      
     ],
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'build'),
+        publicPath: './',
         library: '[name]',
         libraryTarget: 'umd',
         umdNamedDefine: true

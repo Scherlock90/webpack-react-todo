@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export default function Contact() {
+export default function Input() {
     const [testNumber, setTestNumber] = React.useState(0);
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
@@ -12,7 +12,7 @@ export default function Contact() {
     return(
         <div>
             <h1>
-                Contact Us!
+                Input of value
             </h1>
             <div>
                 { testNumber }

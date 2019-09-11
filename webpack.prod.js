@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
@@ -39,10 +40,15 @@ module.exports = {
             }
         ]
     },
-    plugins: [htmlWebpackPlugin],
+    plugins: [
+        htmlWebpackPlugin,
+        new webpack.HotModuleReplacementPlugin()  ,
+        new webpack.ProgressPlugin()  
+    ],
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'build'),
+        publicPath: './',
         library: '[name]',
         libraryTarget: 'umd',
         umdNamedDefine: true
