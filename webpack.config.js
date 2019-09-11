@@ -17,6 +17,14 @@ module.exports = {
     entry: {
         index: './src/index.js',
     },
+    resolve: {
+        extensions: [
+            ".ts", 
+            ".tsx", 
+            ".js", 
+            ".jsx"
+        ]
+    },
     module: {
         rules: [
             {
@@ -30,16 +38,17 @@ module.exports = {
                 test: /\.js$/, 
                 exclude: /node_modules|bower_components/, 
                 loaders: ["babel-loader"] 
+            },
+            { 
+                test: /\.tsx?$/, 
+                loader: "ts-loader" 
             }
         ]
     },
     plugins: [
         htmlWebpackPlugin,
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin()        
     ],
-    resolve: {
-        extensions: [".js", ".jsx"]
-    },
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'build'),

@@ -11,6 +11,14 @@ module.exports = {
     entry: {
         index: './src/index.js',
     },
+    resolve: {
+        extensions: [
+            ".ts", 
+            ".tsx", 
+            ".js", 
+            ".jsx"
+        ]
+    },
     module: {
         rules: [
             {
@@ -19,21 +27,19 @@ module.exports = {
                     { loader: "style-loader" },
                     { loader: "css-loader" }
                 ]
-            }, {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env']
-                    }
-                }
-            }]
+            }, 
+            { 
+                test: /\.js$/, 
+                exclude: /node_modules|bower_components/, 
+                loaders: ["babel-loader"] 
+            },
+            { 
+                test: /\.tsx?$/, 
+                loader: "ts-loader" 
+            }
+        ]
     },
     plugins: [htmlWebpackPlugin],
-    resolve: {
-        extensions: [".js", ".jsx"]
-    },
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'build'),

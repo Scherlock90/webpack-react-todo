@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import CustomTodo from './Todo';
+import Content from './Content';
 
 ReactDOM.render(
     <BrowserRouter>
-        <CustomTodo />
+        <Content />
     </BrowserRouter>,
     document.getElementById('root')
 );
