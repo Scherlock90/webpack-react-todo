@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 const Todo = ({ completed, onCompleted, onDeleted, title, id }) => {
     const titleClasses = completed ? 'title completed' : 'title';

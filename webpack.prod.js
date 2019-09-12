@@ -10,7 +10,7 @@ module.exports = {
     mode: 'production',
     devtool: 'source-map',
     entry: {
-        index: './src/index.js',
+        index: './src/index.js'
     },
     resolve: {
         extensions: [
@@ -48,10 +48,9 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'build'),
-        publicPath: '/',
+        // publicPath: '/',
         library: '[name]',
-        libraryTarget: 'umd',
-        umdNamedDefine: true
+        libraryTarget: 'umd'
     },
-    watch: true
+    // watch: true
 };

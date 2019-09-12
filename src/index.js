@@ -1,16 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import * as createHistory from 'history';
+import { HashRouter } from 'react-router-dom';
 import Content from './Content';
 
-const history = createHistory.createBrowserHistory({
-    basename: process.env.PUBLIC_URL,
-});
-
 ReactDOM.render(
-    <BrowserRouter history={history} >
+    <HashRouter basename={process.env.PUBLIC_URL}>
         <Content />
-    </BrowserRouter>,
+    </HashRouter>,
     document.getElementById('root')
 );
