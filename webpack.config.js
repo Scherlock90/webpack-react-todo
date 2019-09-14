@@ -1,15 +1,31 @@
+const webpack = require('webpack');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const htmlWebpackPlugin = new HtmlWebpackPlugin({
+    template: path.join(__dirname, "/public/index.html"),
+    filename: "./index.html"
+});
 
 module.exports = {
     mode: 'development',
+    devtool: 'eval',
     devServer: {
         port: 9999,
-        publicPath: '/dist/',
-        contentBase: './public',
-        watchContentBase: true,
+        historyApiFallback: true,
+        open: true,
+        contentBase: './build',
+        hot: true
     },
     entry: {
-        index: './lib/index.js',
+        index: './src/index.js',
+    },
+    resolve: {
+        extensions: [
+            ".ts", 
+            ".tsx", 
+            ".js", 
+            ".jsx"
+        ]
     },
     module: {
         rules: [
@@ -19,20 +35,31 @@ module.exports = {
                     { loader: "style-loader" },
                     { loader: "css-loader" }
                 ]
-            }, {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env']
-                    }
-                }
-            }]
+            }, 
+            { 
+                test: /\.js$/, 
+                exclude: /node_modules|bower_components/, 
+                loaders: ["babel-loader"] 
+            },
+            { 
+                test: /\.tsx?$/, 
+                loader: "ts-loader"
+            }
+        ]
     },
+    plugins: [
+        htmlWebpackPlugin,
+        new webpack.HotModuleReplacementPlugin()  ,
+        new webpack.ProgressPlugin()      
+    ],
     output: {
         filename: '[name].js',
+<<<<<<< HEAD
         path: path.resolve(__dirname, 'src'),
+=======
+        path: path.resolve(__dirname, 'build'),
+        publicPath: '/',
+>>>>>>> 29e39be2e848d0b4a2fa5b1dea9324ccc5394a41
         library: '[name]',
         libraryTarget: 'umd',
         umdNamedDefine: true

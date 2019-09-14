@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -501,3 +502,16 @@ eval("var g; // This works in non-strict mode\n\ng = function () {\n  return thi
 
 /******/ });
 });
+=======
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { HashRouter } from 'react-router-dom';
+import Content from './Content';
+
+ReactDOM.render(
+    <HashRouter basename={process.env.PUBLIC_URL}>
+        <Content />
+    </HashRouter>,
+    document.getElementById('root')
+);
+>>>>>>> 29e39be2e848d0b4a2fa5b1dea9324ccc5394a41
