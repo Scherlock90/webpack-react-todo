@@ -4,6 +4,7 @@ import HomePage from './components/HomePage';
 import Input from './components/Input';
 import CustomTodo from './components/Todo/CustomTodo';
 import Nav from './components/Nav';
+import Notfound from './components/NotFound';
 
 export default function Content() {
 
@@ -24,6 +25,7 @@ export default function Content() {
                     path="/input"
                     component={Input}
                 />
+                <Route component={Notfound} />
             </Switch>
         </div>
     )

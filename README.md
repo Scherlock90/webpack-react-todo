@@ -12,7 +12,7 @@
 
 #### yarn or npm 
 
-1. first-start:dev - to build files for server
+1. build:dev - to build files for server
 2. start:dev - to start live server
 3. build:dev - build files
 4. build - create production package
