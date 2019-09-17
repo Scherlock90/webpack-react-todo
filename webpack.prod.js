@@ -1,9 +1,13 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const htmlWebpackPlugin = new HtmlWebpackPlugin({
+const htmlWebpackPluginCreateIndexHtml = new HtmlWebpackPlugin({
     template: path.join(__dirname, "/public/index.html"),
-    filename: "./index.html"
+    filename: "./index.html",
+});
+const htmlWebpackPluginCreate404Html = new HtmlWebpackPlugin({
+    template: path.join(__dirname, "/public/index.html"),
+    filename: "./404.html",
 });
 
 module.exports = {
@@ -41,7 +45,8 @@ module.exports = {
         ]
     },
     plugins: [
-        htmlWebpackPlugin,
+        htmlWebpackPluginCreateIndexHtml,
+        htmlWebpackPluginCreate404Html,
         new webpack.HotModuleReplacementPlugin()  ,
         new webpack.ProgressPlugin()  
     ],
