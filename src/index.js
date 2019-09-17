@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Content from './Content';
 
 ReactDOM.render(
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={'/webpack-react-todo'}>
         <Content />
     </BrowserRouter>,
     document.getElementById('root')

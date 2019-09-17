@@ -52,5 +52,5 @@ module.exports = {
         library: '[name]',
         libraryTarget: 'umd'
     },
-    // watch: true
+    watch: true
 };
