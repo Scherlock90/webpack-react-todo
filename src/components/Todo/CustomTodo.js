@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import AddForm from './AddForm';
 import List from './List';
 import { badId, Footer } from './SmallComponents';
-import '../../style/todo.css';
 
 const CustomTodo = () => {
   const [todos, setTodos] = useState([{

@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import HomePage from './components/HomePage';
-import Input from './components/Input';
-import CustomTodo from './components/Todo/CustomTodo';
 import Nav from './components/Nav';
 import Notfound from './components/NotFound';
+
+const HomePage = React.lazy(() => import('./components/HomePage'));
+const CustomTodo = React.lazy(() => import('./components/Todo/CustomTodo'));
+const Input = React.lazy(() => import('./components/Input'));
+
 
 export default function Content() {
 

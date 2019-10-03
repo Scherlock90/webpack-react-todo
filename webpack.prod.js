@@ -18,9 +18,9 @@ module.exports = {
     },
     resolve: {
         extensions: [
-            ".ts", 
-            ".tsx", 
-            ".js", 
+            ".ts",
+            ".tsx",
+            ".js",
             ".jsx"
         ]
     },
@@ -32,23 +32,34 @@ module.exports = {
                     { loader: "style-loader" },
                     { loader: "css-loader" }
                 ]
-            }, 
-            { 
-                test: /\.js$/, 
-                exclude: /node_modules|bower_components/, 
-                loaders: ["babel-loader"] 
             },
-            { 
-                test: /\.tsx?$/, 
-                loader: "ts-loader" 
+            {
+                test: /\.scss$/,
+                loader: "sass-loader",
+            },
+            {
+                test: /\.scss$/,
+                loader: "sass-resources-loader",
+                options: {
+                    resources: [path.resolve(__dirname,  "./src/style/_mixins.scss")],
+                  } 
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules|bower_components/,
+                loaders: ["babel-loader"]
+            },
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader"
             }
         ]
     },
     plugins: [
         htmlWebpackPluginCreateIndexHtml,
         htmlWebpackPluginCreate404Html,
-        new webpack.HotModuleReplacementPlugin()  ,
-        new webpack.ProgressPlugin()  
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.ProgressPlugin()
     ],
     output: {
         filename: '[name].js',

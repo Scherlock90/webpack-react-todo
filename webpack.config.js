@@ -21,9 +21,9 @@ module.exports = {
     },
     resolve: {
         extensions: [
-            ".ts", 
-            ".tsx", 
-            ".js", 
+            ".ts",
+            ".tsx",
+            ".js",
             ".jsx"
         ]
     },
@@ -35,22 +35,26 @@ module.exports = {
                     { loader: "style-loader" },
                     { loader: "css-loader" }
                 ]
-            }, 
-            { 
-                test: /\.js$/, 
-                exclude: /node_modules|bower_components/, 
-                loaders: ["babel-loader"] 
             },
-            { 
-                test: /\.tsx?$/, 
+            {
+                test: /\.scss$/,
+                loader: 'sass-loader',
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules|bower_components/,
+                loaders: ["babel-loader"]
+            },
+            {
+                test: /\.tsx?$/,
                 loader: "ts-loader"
             }
         ]
     },
     plugins: [
         htmlWebpackPlugin,
-        new webpack.HotModuleReplacementPlugin()  ,
-        new webpack.ProgressPlugin()      
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.ProgressPlugin()
     ],
     output: {
         filename: '[name].js',
