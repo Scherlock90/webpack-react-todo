@@ -8,7 +8,6 @@ const HomePage = React.lazy(() => import('./components/HomePage'));
 const CustomTodo = React.lazy(() => import('./components/Todo/CustomTodo'));
 const Input = React.lazy(() => import('./components/Input'));
 
-
 export default function Content() {
 
     return (

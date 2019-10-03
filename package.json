@@ -18,7 +18,8 @@
     "registry": "https://registry.yarnpkg.com"
   },
   "scripts": {
-    "build:dev": "webpack --config webpack.config.js --module-bind js=babel-loader",
+    "clean": "rimraf build",
+    "build:dev": "yarn run clean && webpack --config webpack.config.js --module-bind js=babel-loader",
     "start:dev": "webpack-dev-server --watch-content-base",
     "build": "webpack --config webpack.prod.js",
     "build:production": "webpack --config webpack.prod.js --module-bind js=babel-loader",
