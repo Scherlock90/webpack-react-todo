@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Notfound from './components/NotFound';
+import './style/app.css';
 
 const HomePage = React.lazy(() => import('./components/HomePage'));
 const CustomTodo = React.lazy(() => import('./components/Todo/CustomTodo'));
