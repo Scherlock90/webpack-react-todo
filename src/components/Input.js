@@ -1,9 +1,9 @@
-import * as React from "react";
+import React from "react";
 
 export default function Input() {
     const [testNumber, setTestNumber] = React.useState(0);
 
-    const onChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
+    const onChange = () => {
         const newValue = e.target.value;
         const convertToNumber = Number(newValue);
 

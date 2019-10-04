@@ -1,5 +1,6 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
+// import * as React from 'react';
+import React from 'react';
+import { Link } from '@reach/router';
 
 export default function Nav() {
     return (
@@ -8,11 +9,11 @@ export default function Nav() {
                 Go to Home
             </Link>
             <span> | </span>
-            <Link to="/input">
+            <Link to="input">
                 Go to input
             </Link>
             <span> | </span>
-            <Link to="/todo">
+            <Link to="todo">
                 Go to Todo
             </Link>
         </div>

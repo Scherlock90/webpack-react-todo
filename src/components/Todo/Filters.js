@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 const Filters = props => {
     const completedClasses = props.onlyCompleted ? 'filter-button active' : 'filter-button';
