@@ -5,7 +5,7 @@ import { ServerLocation } from '@reach/router';
 import fs from 'fs';
 import Index from '../src/index';
 
-const PORT = process.env.PORT || 3020;
+const PORT = process.env.PORT || 7000;
 
 const html = fs.readFileSync('build/index.html').toString();
 
