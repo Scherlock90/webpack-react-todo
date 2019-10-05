@@ -66,7 +66,8 @@ module.exports = {
         path: path.resolve(__dirname, './build'),
         // publicPath: '/',
         library: '[name]',
-        libraryTarget: 'umd'
+        libraryTarget: 'umd',
+        umdNamedDefine: true
     },
     watch: true
 };
