@@ -4,22 +4,27 @@ import Todo from './Todo';
 interface TestProps<T> {
     // children: (item: T) => React.ReactNode
     items: Array<T>
-    item: (title: string, id: string) => React.ReactNodeArray
+    item: (title: string, id: number) => React.ReactNodeArray
+    completed: boolean
+    onCompleted: Function
+    onDeleted: Function
+    title: string
+    // id: number
 }
 
-function List<T>({items}: TestProps<T>) {
-    let todos = items.map((item, id: number | null) => {
+function List<T>({items, completed, onCompleted, onDeleted, title, id}: TestProps<T>) {
+    let todos = items.map((item) => {
         return (
             <Todo
-                key={id}
+                key={title + id}
                 // {...props}
                 {...item}
+                completed={completed}
+                onCompleted={onCompleted}
+                onDeleted={onDeleted}
+                // title={title}
+                // id={item} 
             />
-            // <div>
-            //     {/* {children} */}
-            //     {console.log(item)}
-            //     {item.title}
-            // </div>
         );
     });
     return (
