@@ -1,12 +1,12 @@
 import * as React from 'react';
 import Filters from './Filters';
 
-export const badId = pre => {
-    return `${pre}_${new Date().getTime()}`;
-}
-
 interface Count {
     count: number
+}
+
+export const badId = pre => {
+    return `${pre}_${new Date().getTime()}`;
 }
 
 export const Count: React.FC<Count> = props => {
@@ -16,7 +16,6 @@ export const Count: React.FC<Count> = props => {
       </span>
     );
 }
-
 
 export const Footer: React.FC<Count> = props => {
     return (
