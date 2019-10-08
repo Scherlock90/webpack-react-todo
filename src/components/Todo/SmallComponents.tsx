@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Filters from './Filters';
 
 export const badId = pre => {
@@ -13,7 +13,11 @@ export const Count = props => {
     );
 }
 
-export const Footer = props => {
+interface FooterProps {
+    count: number
+}
+
+export const Footer: React.FC<FooterProps> = props => {
     return (
         <footer>
             <Count count={props.count} />

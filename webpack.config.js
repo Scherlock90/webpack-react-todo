@@ -6,6 +6,11 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
     filename: "./index.html"
 });
 
+const htm404 = new HtmlWebpackPlugin({
+    template: path.join(__dirname, "/public/index.html"),
+    filename: "./404.html"
+})
+
 module.exports = {
     mode: 'development',
     devtool: 'eval',
@@ -53,13 +58,14 @@ module.exports = {
     },
     plugins: [
         htmlWebpackPlugin,
+        htm404,
         new webpack.HotModuleReplacementPlugin(),
         new webpack.ProgressPlugin()
     ],
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'build'),
-        publicPath: '/',
+        path: path.resolve(__dirname, './build'),
+        // publicPath: '/',
         library: '[name]',
         libraryTarget: 'umd',
         umdNamedDefine: true
