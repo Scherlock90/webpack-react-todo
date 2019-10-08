@@ -5,7 +5,11 @@ export const badId = pre => {
     return `${pre}_${new Date().getTime()}`;
 }
 
-export const Count = props => {
+interface Count {
+    count: number
+}
+
+export const Count: React.FC<Count> = props => {
     return (
         <span className='count'>
             {props.count} Items
@@ -13,11 +17,8 @@ export const Count = props => {
     );
 }
 
-interface FooterProps {
-    count: number
-}
 
-export const Footer: React.FC<FooterProps> = props => {
+export const Footer: React.FC<Count> = props => {
     return (
         <footer>
             <Count count={props.count} />
