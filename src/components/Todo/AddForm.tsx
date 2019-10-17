@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 
-const AddForm = props => {
-    const [inputValue, setInputValue] = useState('');
+interface PropsAddForm {
+    onAdd: Function
+}
+
+const AddForm: React.FC<PropsAddForm> = props => {
+    const [inputValue, setInputValue] = React.useState('');
     const handleKeyDown = e => {
         if (e.key === 'Enter') {
             e.preventDefault();

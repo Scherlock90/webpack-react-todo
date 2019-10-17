@@ -10,7 +10,7 @@ interface TestProps {
 }
 
 const List: React.FC<TestProps> = props => {
-    let todos = props.items.map((item, idx) => {
+    let todos = props.items.map((item, idx: number) => {
         return (
             <Todo
                 key={idx}
