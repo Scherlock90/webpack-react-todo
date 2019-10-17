@@ -6,7 +6,7 @@ interface PropsAddForm {
 
 const AddForm: React.FC<PropsAddForm> = props => {
     const [inputValue, setInputValue] = React.useState('');
-    const handleKeyDown = e => {
+    const handleKeyDown = (e: any) => {
         if (e.key === 'Enter') {
             e.preventDefault();
             if (inputValue) {
@@ -19,7 +19,7 @@ const AddForm: React.FC<PropsAddForm> = props => {
         <form>
             <input
                 onKeyDown={handleKeyDown}
-                onChange={e => setInputValue(e.currentTarget.value)}
+                onChange={(e: any) => setInputValue(e.currentTarget.value)}
                 value={inputValue}
                 className='todo-input'
                 type='text'
