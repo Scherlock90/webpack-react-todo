@@ -12,7 +12,7 @@ const CustomTodo = () => {
   const [onlyCompleted, setOnlyCompleted] = React.useState(false);
   const [onlyIncompleted, setOnlyIncompleted] = React.useState(false);
 
-  const handleAddItem = (value: string) => {
+  const handleAddItem = value => {
     const newTodos = [
       ...todos,
       { title: value, id: badId('yogabba'), completed: false }
@@ -20,31 +20,31 @@ const CustomTodo = () => {
     setTodos(newTodos);
   };
 
-  const handleCompleted = (id: string) => {
+  const handleCompleted = id => {
     const currentTodos = [...todos];
     const index = currentTodos.findIndex(el => el.id === id);
     currentTodos[index].completed = !currentTodos[index].completed;
     setTodos(currentTodos);
   };
 
-  const handleDeleted = (id: string) => {
+  const handleDeleted = id => {
     const currentTodos = [...todos];
     const index = currentTodos.findIndex(el => el.id === id);
     currentTodos.splice(index, 1);
     setTodos(currentTodos);
   };
 
-  const handleAllFilterClicked = (e: any) => {
+  const handleAllFilterClicked = e => {
     setOnlyCompleted(false);
     setOnlyIncompleted(false);
   };
 
-  const handleCompletedFilterClicked = (e: any) => {
+  const handleCompletedFilterClicked = e => {
     setOnlyCompleted(true);
     setOnlyIncompleted(false);
   };
 
-  const handleIncompletedFilterClicked = (e: any) => {
+  const handleIncompletedFilterClicked = e => {
     setOnlyCompleted(false);
     setOnlyIncompleted(true);
   }
