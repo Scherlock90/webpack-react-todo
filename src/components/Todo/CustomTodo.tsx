@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import AddForm from './AddForm';
 import List from './List';
 import { badId, Footer } from './SmallComponents';
 
 const CustomTodo = () => {
-  const [todos, setTodos] = useState([{
+  const [todos, setTodos] = React.useState([{
     title: 'Code up a React Todo App',
     id: badId('yogabba'),
     completed: false
   }]);
-  const [onlyCompleted, setOnlyCompleted] = useState(false);
-  const [onlyIncompleted, setOnlyIncompleted] = useState(false);
+  const [onlyCompleted, setOnlyCompleted] = React.useState(false);
+  const [onlyIncompleted, setOnlyIncompleted] = React.useState(false);
 
   const handleAddItem = value => {
     const newTodos = [
@@ -34,17 +34,17 @@ const CustomTodo = () => {
     setTodos(currentTodos);
   };
 
-  const handleAllFilterClicked = e => {
+  const handleAllFilterClicked = (e: any) => {
     setOnlyCompleted(false);
     setOnlyIncompleted(false);
   };
 
-  const handleCompletedFilterClicked = e => {
+  const handleCompletedFilterClicked = (e: any) => {
     setOnlyCompleted(true);
     setOnlyIncompleted(false);
   };
 
-  const handleIncompletedFilterClicked = e => {
+  const handleIncompletedFilterClicked = (e: any) => {
     setOnlyCompleted(false);
     setOnlyIncompleted(true);
   }
