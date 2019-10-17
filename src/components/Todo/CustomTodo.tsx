@@ -12,7 +12,7 @@ const CustomTodo = () => {
   const [onlyCompleted, setOnlyCompleted] = React.useState(false);
   const [onlyIncompleted, setOnlyIncompleted] = React.useState(false);
 
-  const handleAddItem = value => {
+  const handleAddItem = (value: string) => {
     const newTodos = [
       ...todos,
       { title: value, id: badId('yogabba'), completed: false }
@@ -20,14 +20,14 @@ const CustomTodo = () => {
     setTodos(newTodos);
   };
 
-  const handleCompleted = id => {
+  const handleCompleted = (id: string) => {
     const currentTodos = [...todos];
     const index = currentTodos.findIndex(el => el.id === id);
     currentTodos[index].completed = !currentTodos[index].completed;
     setTodos(currentTodos);
   };
 
-  const handleDeleted = id => {
+  const handleDeleted = (id: string) => {
     const currentTodos = [...todos];
     const index = currentTodos.findIndex(el => el.id === id);
     currentTodos.splice(index, 1);
