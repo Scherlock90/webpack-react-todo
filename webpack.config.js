@@ -22,7 +22,7 @@ module.exports = {
         hot: true
     },
     entry: {
-        index: './src/index.js',
+        index: './src/index.tsx',
     },
     resolve: {
         extensions: [

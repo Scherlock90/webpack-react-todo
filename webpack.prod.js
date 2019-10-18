@@ -14,7 +14,7 @@ module.exports = {
     mode: 'production',
     devtool: 'source-map',
     entry: {
-        index: './src/index.js'
+        index: './src/index.tsx'
     },
     resolve: {
         extensions: [
