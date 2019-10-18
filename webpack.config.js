@@ -70,5 +70,5 @@ module.exports = {
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
-    // watch: true
+    watch: true
 };
