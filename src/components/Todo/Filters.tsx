@@ -1,6 +1,14 @@
 import * as React from 'react';
 
-const Filters = props => {
+type FilterProps = {
+    onlyCompleted: boolean
+    onlyIncompleted: boolean
+    onFilterCompletedClicked: () => void
+    onFilterIncompletedClicked: () => void
+    onFilterAllClicked: () => void
+}
+
+const Filters: React.FC<FilterProps> = props => {
     const completedClasses = props.onlyCompleted ? 'filter-button active' : 'filter-button';
     const incompletedClasses = props.onlyIncompleted ? 'filter-button active' : 'filter-button';
     const allClasses = !props.onlyCompleted && !props.onlyIncompleted ? 'filter-button active' : 'filter-button';

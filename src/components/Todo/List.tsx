@@ -5,8 +5,8 @@ interface TestProps {
     items: []
     item: [{ title: string, id: string }]
     completed: boolean
-    onCompleted: Function
-    onDeleted: Function
+    onCompleted: () => void
+    onDeleted: () => void
 }
 
 const List: React.FC<TestProps> = props => {
