@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Filters from './Filters';
 
-interface Count {
+interface CountProps {
     count: number 
 }
 
@@ -9,7 +9,7 @@ export const badId = pre => {
     return `${pre}_${new Date().getTime()}`;
 }
 
-export const Count: React.FC<Count> = props => {
+export const Count: React.FC<CountProps> = props => {
     return (
         <span className='count'>
             {props.count} Items
@@ -17,7 +17,7 @@ export const Count: React.FC<Count> = props => {
     );
 }
 
-interface FilterProps extends Count {
+interface FilterProps extends CountProps {
     onlyCompleted: boolean
     onlyIncompleted: boolean
     onFilterCompletedClicked: () => void
@@ -25,7 +25,7 @@ interface FilterProps extends Count {
     onFilterAllClicked: () => void
 }
 
-export const Footer: React.FC<FilterProps> = ({ ...props}) => {
+export const Footer: React.FC<FilterProps> = ({ ...props }) => {
     return (
         <footer>
             <Count count={props.count} />
