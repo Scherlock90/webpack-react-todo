@@ -26,7 +26,6 @@ interface FilterProps extends CountProps {
 }
 
 export const Footer: React.FC<FilterProps> = ({ ...props }) => {
-    console.log({...props})
     return (
         <footer>
             <Count count={props.count} />
