@@ -8,7 +8,6 @@ interface item {
 
 interface TestProps {
     items: item[]
-    // item: [{ title: string, id: string }]
     completed: boolean
     onCompleted: Function
     onDeleted: Function
