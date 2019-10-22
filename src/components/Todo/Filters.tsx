@@ -3,9 +3,9 @@ import * as React from 'react';
 type FilterProps = {
     onlyCompleted: boolean
     onlyIncompleted: boolean
-    onFilterCompletedClicked: () => void
-    onFilterIncompletedClicked: () => void
-    onFilterAllClicked: () => void
+    onFilterCompletedClicked: () => void | Function 
+    onFilterIncompletedClicked: () => void | Function 
+    onFilterAllClicked: () => void | Function 
 }
 
 const Filters: React.FC<FilterProps> = props => {

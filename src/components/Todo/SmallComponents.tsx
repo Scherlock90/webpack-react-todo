@@ -20,17 +20,21 @@ export const Count: React.FC<CountProps> = props => {
 interface FilterProps extends CountProps {
     onlyCompleted: boolean
     onlyIncompleted: boolean
-    onFilterCompletedClicked: () => void
-    onFilterIncompletedClicked: () => void
-    onFilterAllClicked: () => void
+    onFilterCompletedClicked: () => void | Function  
+    onFilterIncompletedClicked: () => void | Function 
+    onFilterAllClicked: () => void | Function  
 }
 
-export const Footer: React.FC<FilterProps> = ({ ...props }) => {
+export const Footer: React.FC<FilterProps> = props => {
     return (
         <footer>
             <Count count={props.count} />
-            <Filters 
-                {...props} 
+            <Filters
+                onlyCompleted={props.onlyCompleted}
+                onlyIncompleted={props.onlyIncompleted}
+                onFilterAllClicked={props.onFilterAllClicked}
+                onFilterIncompletedClicked={props.onFilterIncompletedClicked}
+                onFilterCompletedClicked={props.onFilterIncompletedClicked}
             />
         </footer>
     );

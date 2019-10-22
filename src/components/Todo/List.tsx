@@ -1,12 +1,17 @@
 import * as React from 'react';
 import Todo from './Todo';
 
+interface item {
+    title: string, 
+    id: string 
+}
+
 interface TestProps {
-    items: []
-    item: [{ title: string, id: string }]
+    items: item[]
+    // item: [{ title: string, id: string }]
     completed: boolean
-    onCompleted: () => void
-    onDeleted: () => void
+    onCompleted: Function
+    onDeleted: Function
 }
 
 const List: React.FC<TestProps> = props => {
@@ -23,7 +28,7 @@ const List: React.FC<TestProps> = props => {
     });
     return (
         <ul className="todo-list">
-            {todos}
+            { todos }
         </ul>
     );
 }
