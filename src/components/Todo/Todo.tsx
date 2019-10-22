@@ -1,6 +1,14 @@
 import * as React from 'react';
 
-const Todo = ({ completed, onCompleted, onDeleted, title, id }) => {
+interface ITodoProps {
+    id: string
+    title: string
+    onDeleted: Function
+    onCompleted: Function
+    completed: boolean
+}
+
+const Todo: React.FC<ITodoProps> = ({ completed, onCompleted, onDeleted, title, id }) => {
     const titleClasses = completed ? 'title completed' : 'title';
     return (
         <li className="todo-item">
