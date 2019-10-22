@@ -37,24 +37,19 @@ const CustomTodo = () => {
     setTodos(currentTodos);
   };
 
-  const handleAllFilterClicked = (e: React.MouseEvent<HTMLElement>): void => {
+  const handleAllFilterClicked = (e: React.MouseEvent<HTMLElement>) => {
     setOnlyCompleted(false);
     setOnlyIncompleted(false);
-    console.log('change 1')
   };
 
-  const handleCompletedFilterClicked = (e: React.MouseEvent<HTMLElement>): void => {
+  const handleCompletedFilterClicked = (e: React.MouseEvent<HTMLElement>) => {
     setOnlyCompleted(true);
     setOnlyIncompleted(false);
-    setCompleted(true);
-    console.log('change 2')
   };
 
-  const handleIncompletedFilterClicked = (e: React.MouseEvent<HTMLElement>): void => {
+  const handleIncompletedFilterClicked = (e: React.MouseEvent<HTMLElement>) => {
     setOnlyCompleted(false);
     setOnlyIncompleted(true);
-    setCompleted(false);
-    console.log('change 3')
   }
 
   const getTodosToShow = () => {
@@ -72,7 +67,6 @@ const CustomTodo = () => {
   return (
     <>
       <AddForm onAdd={handleAddItem} />
-      {/* items to do something */}
       <List
         completed={completed}
         items={getTodosToShow()}
@@ -82,9 +76,9 @@ const CustomTodo = () => {
         count={todos.length}
         onlyCompleted={onlyCompleted}
         onlyIncompleted={onlyIncompleted}
-        onFilterAllClicked={() => handleAllFilterClicked}
-        onFilterCompletedClicked={() => handleCompletedFilterClicked}
-        onFilterIncompletedClicked={() => handleIncompletedFilterClicked}
+        onFilterAllClicked={handleAllFilterClicked}
+        onFilterCompletedClicked={handleCompletedFilterClicked}
+        onFilterIncompletedClicked={handleIncompletedFilterClicked}
       />
     </>
   );
