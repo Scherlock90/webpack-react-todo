@@ -27,7 +27,6 @@ const CustomTodo = () => {
     const index = currentTodos.findIndex(el => el.id === id);
     currentTodos[index].completed = !currentTodos[index].completed;
     setTodos(currentTodos);
-    console.log('completed')
   };
 
   const handleDeleted = (id: string) => {
