@@ -6,4 +6,5 @@ const resources = [
   "_mediaQueries.scss",
   "_mixins.scss"
 ];
+
 module.exports = resources.map(file => path.resolve(__dirname, file));

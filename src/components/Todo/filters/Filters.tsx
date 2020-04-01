@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Filters = props => {
+export const Filters = props => {
     const completedClasses = props.onlyCompleted ? 'filter-button active' : 'filter-button';
     const incompletedClasses = props.onlyIncompleted ? 'filter-button active' : 'filter-button';
     const allClasses = !props.onlyCompleted && !props.onlyIncompleted ? 'filter-button active' : 'filter-button';
@@ -30,5 +30,3 @@ const Filters = props => {
         </>
     );
 }
-
-export default Filters;

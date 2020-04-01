@@ -4,13 +4,15 @@ interface PropsAddForm {
     onAdd: Function
 }
 
-const AddForm: React.FC<PropsAddForm> = props => {
+export const AddForm: React.FC<PropsAddForm> = ({ onAdd }) => {
     const [inputValue, setInputValue] = React.useState('');
+
     const handleKeyDown = (e: any) => {
         if (e.key === 'Enter') {
             e.preventDefault();
+
             if (inputValue) {
-                props.onAdd(inputValue);
+                onAdd(inputValue);
                 setInputValue('');
             }
         }
@@ -19,7 +21,9 @@ const AddForm: React.FC<PropsAddForm> = props => {
         <form>
             <input
                 onKeyDown={handleKeyDown}
-                onChange={(e: any) => setInputValue(e.currentTarget.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                    setInputValue(e.currentTarget.value)
+                }}
                 value={inputValue}
                 className='todo-input'
                 type='text'
@@ -28,5 +32,3 @@ const AddForm: React.FC<PropsAddForm> = props => {
         </form>
     );
 }
-
-export default AddForm;

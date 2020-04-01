@@ -8,19 +8,16 @@ export default function Input() {
         const convertToNumber = Number(newValue);
 
         setTestNumber(convertToNumber);
-     }
+    }
+
     return(
         <div>
-            <h1>
-                Input of value
-            </h1>
-            <div>
-                { testNumber }
-            </div>
-            <input 
-                type="number" 
-                value={testNumber} 
-                onChange={onChange} 
+            <h1> Input of value </h1>
+            <div>{ testNumber }</div>
+            <input
+                type="number"
+                value={testNumber}
+                onChange={onChange}
             />
         </div>
     )

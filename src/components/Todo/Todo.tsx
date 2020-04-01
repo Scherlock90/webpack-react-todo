@@ -15,11 +15,11 @@ const Todo: React.FC<ITodoProps> = ({ completed, onCompleted, onDeleted, title, 
             <input
                 type="checkbox"
                 checked={completed}
-                onChange={e => onCompleted(id)}
+                onChange={(id: any) => onCompleted(id)}
                 className='toggle-complete'
             />
-            <span className={titleClasses}>{title}</span>
-            <button onClick={e => onDeleted(id)} className="delete" >x</button>
+            <span className={titleClasses}>{ title }</span>
+            <button onClick={(id: any) => onDeleted(id)} className="delete" >x</button>
         </li>
     );
 }

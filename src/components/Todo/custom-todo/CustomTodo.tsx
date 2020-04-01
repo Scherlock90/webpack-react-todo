@@ -1,7 +1,8 @@
 import * as React from 'react';
-import AddForm from './AddForm';
-import List from './List';
-import { badId, Footer } from './SmallComponents';
+import { AddForm } from '../add-form/AddForm';
+import { List } from '../list/List';
+import { badId } from '../utils';
+import { Footer } from '../footer/Footer';
 
 const CustomTodo = () => {
   const [todos, setTodos] = React.useState([{
@@ -36,17 +37,17 @@ const CustomTodo = () => {
     setTodos(currentTodos);
   };
 
-  const handleAllFilterClicked = (e: React.MouseEvent<HTMLElement>) => {
+  const handleAllFilterClicked = () => {
     setOnlyCompleted(false);
     setOnlyIncompleted(false);
   };
 
-  const handleCompletedFilterClicked = (e: React.MouseEvent<HTMLElement>) => {
+  const handleCompletedFilterClicked = () => {
     setOnlyCompleted(true);
     setOnlyIncompleted(false);
   };
 
-  const handleIncompletedFilterClicked = (e: React.MouseEvent<HTMLElement>) => {
+  const handleIncompletedFilterClicked = () => {
     setOnlyCompleted(false);
     setOnlyIncompleted(true);
   }
