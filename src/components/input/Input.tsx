@@ -1,24 +1,29 @@
-import * as React from "react";
+import * as React from "react"
 
 export default function Input() {
-    const [testNumber, setTestNumber] = React.useState(0);
+    const [numberFromInput, setNewNumber] = React.useState(0)
+    const [validation, setValidation] = React.useState(false)
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
-        const newValue = e.target.value;
-        const convertToNumber = Number(newValue);
-
-        setTestNumber(convertToNumber);
+        if(numberFromInput >= 10) {
+            setValidation(true)
+            setNewNumber(numberFromInput - 1)
+        } else {
+            setNewNumber(+(e.target.value))
+            setValidation(false)
+        }
     }
 
-    return(
-        <div>
+    return (
+        <>
             <h1> Input of value </h1>
-            <div>{ testNumber }</div>
+            <div>{numberFromInput }</div>
             <input
                 type="number"
-                value={testNumber}
+                value={numberFromInput}
                 onChange={onChange}
             />
-        </div>
+            <div>{ validation && 'You have 10, and stop count number' }</div>
+        </>
     )
 }

@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-interface PropsAddForm {
-    onAdd: Function
+interface IProps {
+    onAdd: (inputValue: string) => void
 }
 
-export const AddForm: React.FC<PropsAddForm> = ({ onAdd }) => {
+export const AddForm: React.FC<IProps> = ({ onAdd }) => {
     const [inputValue, setInputValue] = React.useState('');
 
-    const handleKeyDown = (e: any) => {
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             e.preventDefault();
 
@@ -17,13 +17,12 @@ export const AddForm: React.FC<PropsAddForm> = ({ onAdd }) => {
             }
         }
     }
+
     return (
         <form>
             <input
                 onKeyDown={handleKeyDown}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    setInputValue(e.currentTarget.value)
-                }}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.currentTarget.value)}
                 value={inputValue}
                 className='todo-input'
                 type='text'

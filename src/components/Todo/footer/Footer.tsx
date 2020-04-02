@@ -8,7 +8,6 @@ interface IProps {
     onlyIncompleted: boolean
     onFilterCompletedClicked: Function
     onFilterIncompletedClicked: Function
-    onFilterAllClicked: Function
 }
 
 

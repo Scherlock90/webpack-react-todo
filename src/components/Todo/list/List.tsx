@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Todo from '../Todo';
+import { ButtonsTodo } from '../buttons-todo/ButtonsTodo';
 
 interface IProps {
     items: { title: string, id: string }[]
@@ -13,19 +13,18 @@ export const List: React.FC<IProps> = ({
     completed,
     onCompleted,
     onDeleted,
-}) => {
-
-    let todos = items.map((item, idx: number) => {
-        return (
-            <Todo
-                key={idx}
-                {...item}
-                completed={completed}
-                onCompleted={onCompleted}
-                onDeleted={onDeleted}
-            />
-        );
-    });
-
-    return <ul className="todo-list">{ todos }</ul>
-}
+}) => (
+    <ul className="todo-list">
+        {
+            items.map(( item, idx: number ) =>
+                <ButtonsTodo
+                    key={idx}
+                    {...item}
+                    completed={completed}
+                    onCompleted={onCompleted}
+                    onDeleted={onDeleted}
+                />
+            )
+        }
+    </ul>
+)

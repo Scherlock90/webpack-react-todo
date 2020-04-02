@@ -1,32 +1,30 @@
-import * as React from 'react';
+import * as React from 'react'
+import { Button } from '../../common/button/Button'
 
-export const Filters = props => {
-    const completedClasses = props.onlyCompleted ? 'filter-button active' : 'filter-button';
-    const incompletedClasses = props.onlyIncompleted ? 'filter-button active' : 'filter-button';
-    const allClasses = !props.onlyCompleted && !props.onlyIncompleted ? 'filter-button active' : 'filter-button';
+export const Filters = ({
+    onlyCompleted,
+    onlyIncompleted,
+    onFilterCompletedClicked,
+    onFilterIncompletedClicked,
+}) => {
+
+    const completedClasses = onlyCompleted ? 'filter-button active' : 'filter-button';
+    const incompletedClasses = onlyIncompleted ? 'filter-button active' : 'filter-button';
+
     return (
         <>
             <label>Show: </label>
-            <button
+            <Button
                 className={completedClasses}
-                onClick={props.onFilterCompletedClicked}
-            >
-                Completed
-        </button>
-            <span className="pipe"> | </span>
-            <button
+                onClick={onFilterCompletedClicked}
+                name={'Completed'}
+            />
+            <label className="pipe"> | </label>
+            <Button
                 className={incompletedClasses}
-                onClick={props.onFilterIncompletedClicked}
-            >
-                Incomplete
-        </button>
-            <span className="pipe"> | </span>
-            <button
-                className={allClasses}
-                onClick={props.onFilterAllClicked}
-            >
-                All
-        </button>
+                onClick={onFilterIncompletedClicked}
+                name={'Incompleted'}
+            />
         </>
-    );
+    )
 }
