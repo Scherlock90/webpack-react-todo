@@ -1,14 +1,17 @@
-::placeholder {
-  color: #dedede;
-}
-.main-title{
-  font-size: 180%;
-}
 body {
   background-color: #f6f6f6;
   font-family: helvetica;
   color: #444;
 }
+
+::placeholder {
+  color: #dedede;
+}
+
+.main-title{
+  font-size: 180%;
+}
+
 .container {
   background-color: white;
   width: 400px;
@@ -50,6 +53,7 @@ form {
   padding: 0 10px;
   line-height: 40px;
 }
+
 .todo-item:last-child {
   border-bottom: 1px solid #ededed;
 }
@@ -65,10 +69,12 @@ form {
   border: none;
   color: #999;
 }
+
 .filter-button.active {
   color: #666;
   font-weight: bold;
 }
+
 .delete {
   position: absolute;
   right: 10px;
@@ -77,9 +83,11 @@ form {
   font-size: 24px;
   display: none;
 }
+
 .todo-item:hover .delete {
   display: inline-block;
 }
+
 .delete:hover {
   cursor: pointer;
 }
@@ -88,9 +96,11 @@ form {
   opacity: .5;
   cursor: pointer;
 }
+
 .count {
   margin-right: 20px;
 }
+
 footer {
   background-color: #f7f7f7;
   border-bottom: 1px solid #ededed;
@@ -100,10 +110,16 @@ footer {
   font-size: 13px;
   text-align: center;
 }
+
 footer button {
   font-size: 13px;
 }
+
 .completed {
   text-decoration: line-through;
   color: #d6d6d6;
+}
+
+.input-div {
+  padding: 0.2rem;
 }
