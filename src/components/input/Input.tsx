@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function Input() {
+export default function() {
   const [numberFromInput, setNewNumber] = useState(0);
   const [mergeNumbers, setMergeNumbers] = useState([]);
   const [isValidation, setIsValidation] = useState(false);

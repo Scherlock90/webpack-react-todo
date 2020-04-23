@@ -4,7 +4,7 @@ import { List } from "./list/List";
 import { badId } from "./utils";
 import { Footer } from "./footer/Footer";
 
-const CustomTodo = () => {
+export default function() {
   const [todo, setTodo] = useState([
     {
       title: "Code up a React Todo App",
@@ -79,6 +79,4 @@ const CustomTodo = () => {
       />
     </>
   );
-};
-
-export default CustomTodo;
+}
