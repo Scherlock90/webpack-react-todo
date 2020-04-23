@@ -11,7 +11,7 @@ install:
 before_script:
   - npm ci
 script:
-  - CI=false npm run build
+  - CI=false npm run build:production
 
 deploy:
   provider: pages
