@@ -1,1 +1,1 @@
-export const badId = pre => `${pre}_${new Date().getTime()}`;
+export const badId = (pre: string) => `${pre}_${new Date().getTime()}`;

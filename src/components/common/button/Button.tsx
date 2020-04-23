@@ -1,6 +1,11 @@
-import * as React from 'react';
+import React from "react";
 
-export const Button = ({ className, onClick, name }) =>
-    <button {...{ className, onClick }}>
-        { name }
-    </button>
+interface IProps {
+  className: string;
+  onClick: () => void;
+  name: string;
+}
+
+export const Button: React.FC<IProps> = ({ className, onClick, name }) => (
+  <button {...{ className, onClick }}>{name}</button>
+);

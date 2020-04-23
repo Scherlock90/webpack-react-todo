@@ -1,8 +1,9 @@
-import * as React from 'react';
+import React from "react";
 
 interface IProps {
-    count: number
+  count: number;
 }
 
-export const Count: React.FC<IProps> = ({ count }) =>
-    <span className='count'>{ count } Items</span>
+export const Count: React.FC<IProps> = ({ count }) => (
+  <span className={"count"}>{count} Items</span>
+);

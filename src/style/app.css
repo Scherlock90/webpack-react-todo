@@ -8,7 +8,7 @@ body {
   color: #dedede;
 }
 
-.main-title{
+.main-title {
   font-size: 180%;
 }
 
@@ -58,7 +58,7 @@ form {
   border-bottom: 1px solid #ededed;
 }
 
-.todo-item input[type='checkbox'] {
+.todo-item input[type="checkbox"] {
   margin-right: 10px;
 }
 
@@ -93,7 +93,7 @@ form {
 }
 
 .filter-button:hover {
-  opacity: .5;
+  opacity: 0.5;
   cursor: pointer;
 }
 
