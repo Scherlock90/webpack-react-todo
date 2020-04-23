@@ -8,13 +8,11 @@ import { routesArray } from "./static/Routes";
 
 export const Content = () => (
   <BrowserRouter>
-    <React.Suspense fallback={<h1>loading state...</h1>}>
-      <Nav />
-      <Switch>
-        {routesArray.map(({ exact, path, component }, index) => (
-          <Route key={index} exact={exact} path={path} component={component} />
-        ))}
-      </Switch>
-    </React.Suspense>
+    <Nav />
+    <Switch>
+      {routesArray.map(({ exact, path, component }, index) => (
+        <Route key={index} exact={exact} path={path} component={component} />
+      ))}
+    </Switch>
   </BrowserRouter>
 );

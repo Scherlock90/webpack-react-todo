@@ -1,10 +1,8 @@
-import React from "react";
+import HomePage from "../components/home-page/HomePage";
+import Custom from "../components/todo/Todo";
+import Input from "../components/input/Input";
 
 import { Notfound } from "../components/not-found/NotFound";
-
-const HomePage = React.lazy(() => import("../components/home-page/HomePage"));
-const Custom = React.lazy(() => import("../components/todo/Todo"));
-const Input = React.lazy(() => import("../components/input/Input"));
 
 export const routesArray = [
   { path: "/", component: HomePage, exact: true },
