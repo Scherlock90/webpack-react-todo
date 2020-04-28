@@ -11,7 +11,7 @@
     "moduleResolution": "node",
     "lib": ["dom"],
     "baseUrl": "src",
-    "types": ["node"],
+    "types": ["node", "jest", "enzyme"],
     "paths": {
       "@Components/*": ["components/*"],
       "@Core/*": ["core/*"],

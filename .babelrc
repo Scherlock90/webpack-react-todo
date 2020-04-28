@@ -11,13 +11,18 @@
         "fileName": false
       }
     ],
-    [
-      "import",
-      {
-        "libraryName": "antd",
-        "libraryDirectory": "es",
-        "style": "css"
-      }
-    ]
-  ]
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-transform-runtime"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "@babel/preset-env"
+      ],
+      "plugins": [
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-transform-runtime"
+      ]
+    }
+  }
 }
