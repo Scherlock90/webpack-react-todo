@@ -27,13 +27,13 @@ export const Filters: React.FC<IProps> = ({
       <Button
         className={completedClasses}
         onClick={onFilterCompletedClicked}
-        name={"Completed"}
+        children={"Completed"}
       />
       <label className={"pipe"}> | </label>
       <Button
         className={incompletedClasses}
         onClick={onFilterIncompletedClicked}
-        name={"Incompleted"}
+        children={"Incompleted"}
       />
     </>
   );

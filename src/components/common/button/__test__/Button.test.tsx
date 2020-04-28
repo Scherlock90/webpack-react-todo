@@ -1,22 +1,46 @@
 import React from "react";
-import { HTMLAttributes, shallow, ShallowWrapper } from "enzyme"
+import { render, fireEvent } from "@testing-library/react"
+import { shallow, ShallowWrapper } from "enzyme"
 import { Button } from '../Button'
 
-describe('Hero', () => {
+describe('Button render correctly', () => {
   const testButtonProps = {
-    className: 'test',
-    onClick: () => console.log('onClick'),
-    name: 'test'
+    className: 'test-buttons',
+    onClick: () => console.log('this'),
+    children: 'test buttons'
   };
+
   let child: ShallowWrapper<undefined, undefined>
+
   beforeEach(() =>
-    child = shallow(<Button {...testButtonProps} />))
-  it("should render without error", () =>
-    expect(Button.length).toBe(1));
-  // it("should render paragraph for each item that has been passed
-  //     through props", () => {
-  //   const pNodes: ShallowWrapper<HTMLAttributes, undefined> =
-  //   child.find("p");
-  // expect(pNodes.length).toBe(testChildProps.items.length);
-  // });
-});
+    child = shallow( <Button {...testButtonProps} /> )
+  )
+
+  it( "should render without error", () =>
+    expect( child.hasClass('test-buttons') ).toBeTruthy()
+  )
+
+  // it( "updates on click", () => {
+  //     const { getByText } = render( <Button {...testButtonProps} /> )
+  //     const buttonClick = getByText( 'test buttons' )
+
+  //     fireEvent.click(buttonClick)
+  //     expect(buttonClick).toBe('onClick')
+  //   }
+  // )
+
+  it( 'renders correctly', () => {
+    const { getByText } = render( <Button {...testButtonProps} /> )
+
+    expect(getByText('test buttons')).toBeTruthy()
+  } )
+
+  // it("check counter increment function is callled", () => {
+  //   const wrapper = shallow( <Button {...testButtonProps} /> )
+  //   const spy = jest.spyOn(wrapper.instance(), )
+
+  //   wrapper.find( "button" ).simulate( "click" )
+
+  //   expect(spy).toBeCalled()
+  // })
+})
