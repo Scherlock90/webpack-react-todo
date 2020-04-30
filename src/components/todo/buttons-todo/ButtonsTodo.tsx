@@ -24,6 +24,8 @@ export const ButtonsTodo: React.FC<ITodoProps> = ({
       className={"toggle-complete"}
     />
     <span className={"title"}>{title}</span>
-    <Button onClick={() => onDeleted(id)} className={"delete"} children={"x"} />
+    <Button onClick={() => onDeleted(id)} className={"delete"}>
+      X
+    </Button>
   </li>
 );

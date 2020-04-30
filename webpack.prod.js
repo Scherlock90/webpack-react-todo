@@ -4,11 +4,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const htmlWebpackPluginCreateIndexHtml = new HtmlWebpackPlugin({
   template: path.join(__dirname, "/public/index.html"),
-  filename: "index.html"
+  filename: "index.html",
+  inject: true
 });
 const htmlWebpackPluginCreate404Html = new HtmlWebpackPlugin({
   template: path.join(__dirname, "/public/index.html"),
-  filename: "404.html"
+  filename: "404.html",
+  inject: true
 });
 
 module.exports = {

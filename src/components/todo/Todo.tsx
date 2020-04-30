@@ -52,7 +52,7 @@ export default function() {
 
     if (isOnlyCompleted) {
       todoToShow = todo.filter(todo => todo.completed === true);
-    } else if (isOnlyCompleted) {
+    } else if (isOnlyIncompleted) {
       todoToShow = todo.filter(todo => todo.completed === false);
     } else {
       todoToShow = [...todo];

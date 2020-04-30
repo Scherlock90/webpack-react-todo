@@ -24,17 +24,16 @@ export const Filters: React.FC<IProps> = ({
   return (
     <>
       <label>Show: </label>
-      <Button
-        className={completedClasses}
-        onClick={onFilterCompletedClicked}
-        children={"Completed"}
-      />
+      <Button className={completedClasses} onClick={onFilterCompletedClicked}>
+        Completed
+      </Button>
       <label className={"pipe"}> | </label>
       <Button
         className={incompletedClasses}
         onClick={onFilterIncompletedClicked}
-        children={"Incompleted"}
-      />
+      >
+        Incompleted
+      </Button>
     </>
   );
 };
